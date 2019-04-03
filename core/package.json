@@ -1,0 +1,29 @@
+{
+  "name": "@shibajs/core",
+  "version": "1.0.8",
+  "description": "ShibaJS runtime package",
+  "types": "./types/shiba.d.ts",
+  "main": "./jssrc/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "ShibaJS"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShibaJS/Runtime.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ShibaJS/Runtime/issues"
+  },
+  "homepage": "https://github.com/ShibaJS/Runtime#readme",
+  "author": "Tlaster <tlaster@outlook.com>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^11.13.0",
+    "tslint": "^5.15.0",
+    "typescript": "^3.4.1"
+  }
+}

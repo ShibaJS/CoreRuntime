@@ -33,5 +33,6 @@ export default abstract class ShibaComponent
         return true;
     }
 
-    public abstract view(): string;
+    public abstract view(): any;
+
 }

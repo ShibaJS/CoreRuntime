@@ -2,7 +2,7 @@
   "name": "@shibajs/core",
   "version": "1.0.8",
   "description": "ShibaJS runtime package",
-  "types": "./types/shiba.d.ts",
+  "types": "./types/index.d.ts",
   "main": "./jssrc/index.js",
   "scripts": {
     "build": "tsc"

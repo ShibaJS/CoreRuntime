@@ -1,6 +1,6 @@
 interface IShibaComponentLifeCycle {
+    view(): any;
     whenReady?(): void;
-    view(): string;
 }
 
 // Some interviewers like to ask questions about the lifecycle, so let's start with hundreds of lifecycles!
@@ -48,7 +48,7 @@ interface IShibaComponentLifeCycleForInterview {
 
     // Our lifecycle
     whenReady?(): void;
-    view(): string;
+    view(): any;
 }
 
 export {

@@ -1,14 +1,15 @@
-import Shiba from "./Shiba";
-import ShibaComponent from "./ShibaComponent";
-import { IView } from "./types";
+
+// Global declaration
+// @ts-ignore
 declare global {
+    // @ts-ignore
     function registerComponent(name: string, creator: () => ShibaComponent): void;
+    // @ts-ignore
     function runShibaApp(creator: () => ShibaComponent): void;
     namespace JSX {
+        // tslint:disable-next-line:interface-name
         interface IntrinsicElements {
             [name: string]: any;
         }
     }
 }
-
-export { ShibaComponent, Shiba };

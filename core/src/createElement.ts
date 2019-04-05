@@ -1,13 +1,13 @@
 import { IProperty, IShibaExtension, IShibaFunction, IView, ValueType } from "./types";
 
-const Shiba = {
-    createElement,
-};
-
-function createElement(element: any, property: any | null, ...child: IView[]): IView {
+export function createElement(element: any, property: any | null, ...child: IView[]): IView {
     // TODO: element can be non string
+    if (typeof element === "function") {
+        return new element();
+    }
     return {
         children: child,
+        className: "IView",
         name: element,
         properties: parseProperties(property),
     };
@@ -28,6 +28,7 @@ function parseProperty(property: [string, any]): IProperty {
     const name = property[0];
     const value = parseValue(property[1]);
     return {
+        className: "IProperty",
         name,
         ...value,
     };
@@ -67,6 +68,11 @@ function parseValue(value: any): {value: any, valueType: ValueType} {
                 valueType: ValueType.Null,
             };
         }
+    } else if (value.className && value.className === "IShibaExtension") {
+        return {
+            value,
+            valueType: ValueType.Extension,
+        };
     }
     return {
         value: JSON.stringify(value),
@@ -81,8 +87,9 @@ function parseExtension(value: string): IShibaExtension {
     value = value.substring(index + 1);
     index = value.indexOf(OpenCurly);
     const extension: IShibaExtension = {
-        name: name.trim(),
-        value: value.trim(),
+        className: "IShibaExtension",
+        target: value.trim(),
+        type: name.trim(),
     };
     if (index !== -1) {
         value = value.substring(index).trim();
@@ -98,9 +105,8 @@ function parseShibaFunction(innerValue: string): IShibaFunction {
     const value = innerValue.substring(index + 1);
     const parameters = value.split(",").map((it) => parseValue(it.trim()));
     return {
+        className: "IShibaFunction",
         name,
         parameters,
     };
 }
-
-export default Shiba;

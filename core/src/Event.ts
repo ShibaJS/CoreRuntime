@@ -1,4 +1,4 @@
-export default class Event<T> {
+export class Event<T> {
     private listeners: Array<(sender: any, arg: T) => void> = [];
     public invoke(sender: any, arg: T) {
         this.listeners.forEach((it) => it(sender, arg));

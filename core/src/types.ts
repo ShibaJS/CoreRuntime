@@ -1,10 +1,11 @@
-interface IView {
+export interface IView {
+    className: "IView";
     name: string;
     children: IView[];
     properties: IProperty[];
 }
 
-enum ValueType {
+export enum ValueType {
     Function,
     Extension,
     Boolean,
@@ -13,27 +14,23 @@ enum ValueType {
     Null,
 }
 
-interface IShibaFunction {
+export interface IShibaFunction {
+    className: "IShibaFunction";
     name: string;
     parameters: any[];
 }
 
-interface IShibaExtension {
-    name: string;
-    value: string;
+export interface IShibaExtension {
+    className: "IShibaExtension";
+    type: string;
+    target: string;
     script?: string;
+    scriptName?: string;
 }
 
-interface IProperty {
+export interface IProperty {
+    className: "IProperty";
     name: string;
     value: any;
     valueType: ValueType;
 }
-
-export {
-    IView,
-    IProperty,
-    IShibaExtension,
-    IShibaFunction,
-    ValueType,
-};

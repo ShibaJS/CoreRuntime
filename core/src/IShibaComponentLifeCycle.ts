@@ -1,11 +1,11 @@
-interface IShibaComponentLifeCycle {
+export interface IShibaComponentLifeCycle {
     view(): any;
     whenReady?(): void;
 }
 
 // Some interviewers like to ask questions about the lifecycle, so let's start with hundreds of lifecycles!
 // Feel free to add your custom lifecycle!
-interface IShibaComponentLifeCycleForInterview {
+export interface IShibaComponentLifeCycleForInterview {
     // For Android Users
     onCreate?(): void;
     onCreateView?(): string;
@@ -50,8 +50,3 @@ interface IShibaComponentLifeCycleForInterview {
     whenReady?(): void;
     view(): any;
 }
-
-export {
-    IShibaComponentLifeCycle,
-    IShibaComponentLifeCycleForInterview,
-};

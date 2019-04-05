@@ -1,4 +1,4 @@
 dist
-types/*
-!types/index.d.ts
+types
+lib
 jssrc

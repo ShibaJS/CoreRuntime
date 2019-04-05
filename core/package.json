@@ -2,10 +2,11 @@
   "name": "@shibajs/core",
   "version": "1.0.8",
   "description": "ShibaJS runtime package",
-  "types": "./types/index.d.ts",
-  "main": "./jssrc/index.js",
+  "types": "./lib/index.d.ts",
+  "main": "./lib/index.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc && npm run build:copy-global",
+    "build:copy-global": "node ./scripts/append_global.js"
   },
   "keywords": [
     "ShibaJS"

@@ -1,4 +1,5 @@
-import { Shiba, ShibaComponent } from "@shibajs/core";
+import Shiba, {ShibaComponent} from "@shibajs/core";
+
 export default class Detail extends ShibaComponent {
     public view() {
         return (

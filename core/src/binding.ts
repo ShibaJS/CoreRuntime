@@ -1,9 +1,14 @@
-import { IShibaExtension } from "./types";
+import {IShibaExtension} from "./types";
 
-export function binding<T>(name: string, converter?: (value: T) => any): IShibaExtension {
+export function binding<T>(target: string, converter?: string | ((value: T) => any)): IShibaExtension {
+    return extension("binding", target, converter);
+}
+
+// TODO: converter
+export function extension<T>(type: string, target: string, converter?: string | ((value: T) => any)): IShibaExtension {
     return {
         className: "IShibaExtension",
-        target: name,
-        type: "binding.ts",
+        target,
+        type,
     };
 }

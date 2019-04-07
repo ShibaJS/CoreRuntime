@@ -1,23 +1,17 @@
 export interface IView {
     className: "IView";
     name: string;
-    children: IView[];
+    children?: IView[];
     properties: IProperty[];
 }
 
 export enum ValueType {
-    Function,
     Extension,
     Boolean,
     Number,
     String,
     Null,
-}
-
-export interface IShibaFunction {
-    className: "IShibaFunction";
-    name: string;
-    parameters: any[];
+    Custom,
 }
 
 export interface IShibaExtension {

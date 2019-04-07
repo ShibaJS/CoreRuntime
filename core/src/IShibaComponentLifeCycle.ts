@@ -43,8 +43,8 @@ export interface IShibaComponentLifeCycleForInterview {
     mounted?(): void;
     beforeUpdate?(): void;
     updated?(): void;
-    beforeDestory?(): void;
-    destoryed?(): void;
+    beforeDestroy?(): void;
+    destroyed?(): void;
 
     // Our lifecycle
     whenReady?(): void;

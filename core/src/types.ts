@@ -18,7 +18,6 @@ export interface IShibaExtension {
     className: "IShibaExtension";
     type: string;
     target: string;
-    script?: string;
     scriptName?: string;
 }
 

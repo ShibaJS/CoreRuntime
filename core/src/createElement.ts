@@ -1,6 +1,6 @@
 import {IProperty, IView, ValueType} from "./types";
 
-export function createElement(element: any, property: any | null, ...children: IView[]): IView {
+export function createElement(element: any, property: any | null, ...children: any[]): IView {
     return {
         children,
         className: "IView",

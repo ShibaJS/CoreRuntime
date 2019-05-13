@@ -1,3 +1,4 @@
+import crypto from "crypto";
 import { isString } from "util";
 import {IShibaExtension} from "./types";
 
@@ -21,5 +22,8 @@ export function extension<T>(type: string, target: string, converter?: string | 
 }
 
 function registerConverter(converter: (value: any) => any): string {
-    return ""; // TODO
+    const hash = "_" + crypto.createHash("sha256").update(converter.toString()).digest("hex");
+    const g: any = global;
+    g[hash] = converter;
+    return hash;
 }

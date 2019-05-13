@@ -3,7 +3,7 @@
 // @ts-ignore
 declare global {
     // @ts-ignore
-    function registerComponent(name: string, view: IView): void;
+    function registerComponent(name: string, view: IView, dataContext?: () => any): void;
     // @ts-ignore
     function runShibaApp(view: IView): void;
     namespace JSX {

@@ -1,24 +1,6 @@
 import {IProperty, IView, ValueType} from "./types";
 
 export function createElement(element: any, property: any | null, ...children: IView[]): IView {
-    if (typeof element === "function") {
-        return {
-            children,
-            className: "IView",
-            name: "_shibaWrapper",
-            properties: [
-                {
-                    className: "IProperty",
-                    name: "view",
-                    value: {
-                        creator: element,
-                        property,
-                    },
-                    valueType: ValueType.Custom,
-                },
-            ],
-        };
-    }
     return {
         children,
         className: "IView",

@@ -1,18 +1,11 @@
-import Shiba, {binding, ShibaComponent} from "@shibajs/core";
-import Detail from "./Detail";
+import Shiba from "@shibajs/core";
+import "./detail";
 
-class Index extends ShibaComponent {
+registerComponent("index", () => (
+    <stack>
+        <text text="index" />
+        <detail />
+    </stack>
+));
 
-    private isLoading = false;
-
-    public view() {
-        return (
-            <stack text={binding("hello!")}>
-                <Detail/>
-                <text text="Hello world!" visiable={this.isLoading}/>
-            </stack>
-        );
-    }
-}
-
-runShibaApp(() => <Index/>);
+runShibaApp(() => <index/>);

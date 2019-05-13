@@ -1,9 +1,9 @@
-import Shiba, {ShibaComponent} from "@shibajs/core";
+import Shiba, { binding } from "@shibajs/core";
 
-export default class Detail extends ShibaComponent {
-    public view() {
-        return (
-            <text text="Hello!"/>
-        );
-    }
-}
+registerComponent("detail", () => (
+    <stack>
+        <text text={binding("text", (it) => {
+            return it;
+        })}/>
+    </stack>
+));

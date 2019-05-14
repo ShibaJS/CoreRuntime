@@ -46,6 +46,11 @@ function parseValue(value: any): {value: any, valueType: ValueType} {
                 value,
                 valueType: ValueType.Null,
             };
+        } else {
+            return {
+                value,
+                valueType: ValueType.String,
+            };
         }
     } else if (typeof value === "boolean") {
         return {
@@ -65,6 +70,6 @@ function parseValue(value: any): {value: any, valueType: ValueType} {
     }
     return {
         value: JSON.stringify(value),
-        valueType: ValueType.String,
+        valueType: ValueType.Custom,
     };
 }

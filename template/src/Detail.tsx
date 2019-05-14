@@ -3,7 +3,7 @@ import Shiba, { binding } from "@shibajs/core";
 registerComponent("detail",
     <stack>
         <text text={binding("text", (it) => {
-            return it + "dsagdfsfdsa";
+            return it + "hello!";
         })}/>
     </stack>,
 );

@@ -1,22 +1,6 @@
 import {IProperty, IView, ValueType} from "./types";
 
 export function createElement(element: any, property: any | null, ...children: any[]): IView {
-    if (typeof element === "function") {
-        const value = element(property);
-        return {
-            children,
-            className: "IView",
-            name: "_shibaWrapper",
-            properties: [
-                {
-                    className: "IProperty",
-                    name: "view",
-                    value,
-                    valueType: ValueType.Custom,
-                },
-            ],
-        };
-    }
     return {
         children,
         className: "IView",
@@ -85,7 +69,7 @@ function parseValue(value: any): {value: any, valueType: ValueType} {
         };
     }
     return {
-        value,
+        value: JSON.stringify(value),
         valueType: ValueType.Custom,
     };
 }

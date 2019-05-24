@@ -10,3 +10,4 @@ const Shiba = {
 export default Shiba;
 
 export * from "./binding";
+export * from "./ShibaComponent";

@@ -1,11 +1,15 @@
-import Shiba, { binding } from "@shibajs/core";
-import "./detail";
+import Shiba, { binding, ShibaComponent } from "@shibajs/core";
+import Detail from "./Detail";
 
-registerComponent("index",
-    <stack>
-        <text text="index" />
-        <detail />
-    </stack>,
-);
+class Index extends ShibaComponent {
+    public onCreate() {
+        this.setContentView(
+            <stack>
+                <Detail value="indexValue!"/>
+                <text text="index"/>
+            </stack>,
+        );
+    }
+}
 
-// runShibaApp(() => <index />);
+runShibaApp(() => <Index />);

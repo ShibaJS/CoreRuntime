@@ -1,3 +1,4 @@
+import registerGlobalFunction from "./registerGlobalFunction";
 import {IProperty, IView, ValueType} from "./types";
 
 export function createElement(element: any, property: any | null, ...children: any[]): IView {
@@ -66,6 +67,11 @@ function parseValue(value: any): {value: any, valueType: ValueType} {
         return {
             value,
             valueType: ValueType.Extension,
+        };
+    } else if (typeof value === "function") {
+        return {
+            value: registerGlobalFunction(value),
+            valueType: ValueType.String,
         };
     }
     return {

@@ -1,6 +1,6 @@
 {
   "name": "@shibajs/core",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "ShibaJS runtime package",
   "types": "./lib/index.d.ts",
   "main": "./lib/index.js",

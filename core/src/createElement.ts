@@ -69,7 +69,7 @@ function parseValue(value: any): {value: any, valueType: ValueType} {
         };
     }
     return {
-        value: JSON.stringify(value),
+        value,
         valueType: ValueType.Custom,
     };
 }
